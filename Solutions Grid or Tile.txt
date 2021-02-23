@@ -1,0 +1,35 @@
+Solucion Grid Tile
+
+GridTile(
+      child: Image.network(
+        poster,
+        fit: BoxFit.cover,
+      ),
+      footer: GridTileBar(
+        backgroundColor: Colors.black54,
+        title: Text(
+          title,
+          textAlign: TextAlign.center,
+        ),
+        subtitle: Text('Tipo: ' + type, textAlign: TextAlign.center,),
+        trailing: Text('Año: ' + year, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+      ),
+    );
+
+ListTile(
+      leading: CircleAvatar(
+        backgroundImage: NetworkImage(poster),
+      ),
+      title: Text(
+        title,
+        textAlign: TextAlign.start,
+      ),
+      subtitle: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Text(type + ' - '),
+          Text(year)
+        ],
+      ),
+    );
