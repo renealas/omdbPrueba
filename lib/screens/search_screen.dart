@@ -19,7 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   void dispose() {
-    //Dispose the controller when the screen is disposed
+    //Borramos el Controlador de Texto al Finalizar Busqueda
     searchTextController.dispose();
     super.dispose();
   }
