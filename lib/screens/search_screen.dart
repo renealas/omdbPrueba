@@ -70,9 +70,9 @@ class _SearchScreenState extends State<SearchScreen> {
               tooltip: 'Buscar Peliculas',
               onPressed: () {
                 setState(() {
-                  //Set the state with the new value so that the widget will re render
+                  //Pone el Estado nuevo
                   searchText = searchTextController.text;
-                  //Hide keyboard when the state is set
+                  //Esconde el Teclado
                   SystemChannels.textInput.invokeMethod('TextInput.hide');
                   Provider.of<Peliculas>(context, listen: false)
                       .fetchAndSetPeliculas(searchText, tipo);
