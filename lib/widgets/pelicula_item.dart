@@ -7,12 +7,8 @@ class PeliculaItem extends StatelessWidget {
   final String type;
   final String year;
   final String poster;
-  final String plot;
-  final String imdbRating;
-  final String metaScore;
 
-  PeliculaItem(this.imdbID, this.title, this.type, this.year, this.poster,
-      this.plot, this.imdbRating, this.metaScore);
+  PeliculaItem(this.imdbID, this.title, this.type, this.year, this.poster);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +27,7 @@ class PeliculaItem extends StatelessWidget {
       ),
       onTap: () => {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (ctx) => PeliculaDetailScreen(imdbID, title, type, year, poster, plot, imdbRating, metaScore)),
+          MaterialPageRoute(builder: (ctx) => PeliculaDetailScreen(imdbID)),
         ),
       },
     );

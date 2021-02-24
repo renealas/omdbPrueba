@@ -4,9 +4,9 @@ class Pelicula {
   final String type;
   final String year;
   final String poster;
-  final String plot;
-  final String imdbRating;
-  final String metaScore;
+  //final String plot;
+  //final String imdbRating;
+  //final String metaScore;
 
-  Pelicula({this.imdbID, this.title, this.type, this.year, this.poster, this.plot, this.imdbRating, this.metaScore});
+  Pelicula({this.imdbID, this.title, this.type, this.year, this.poster}); //this.plot, this.imdbRating, this.metaScore});
 }

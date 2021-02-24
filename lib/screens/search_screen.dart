@@ -15,7 +15,8 @@ class _SearchScreenState extends State<SearchScreen> {
   final searchTextController = new TextEditingController();
   String searchText = "";
   bool serie = false;
-  String tipo = 'movie';
+  bool pelicula = false;
+  String tipo = '';
 
   @override
   void dispose() {
@@ -65,6 +66,27 @@ class _SearchScreenState extends State<SearchScreen> {
                 }),
               ],
             ),
+            Column(
+              children: <Widget>[
+                SizedBox(
+                    height: 10,
+                  ),
+                Text(
+                  'Peliculas:',
+                  style: TextStyle(fontSize: 14),
+                ),
+                Checkbox(value: pelicula, onChanged: (bool value) {
+                  setState(() {
+                    pelicula = value;
+                  });
+                  if(pelicula){
+                    setState(() {
+                      tipo = 'movie';
+                    });
+                  }
+                }),
+              ],
+            ),
             IconButton(
               icon: Icon(Icons.search),
               tooltip: 'Buscar Peliculas',
@@ -76,6 +98,11 @@ class _SearchScreenState extends State<SearchScreen> {
                   SystemChannels.textInput.invokeMethod('TextInput.hide');
                   Provider.of<Peliculas>(context, listen: false)
                       .fetchAndSetPeliculas(searchText, tipo);
+                  setState(() {
+                    tipo = 'none';
+                    pelicula = false;
+                    serie = false;
+                  });
                 });
               },
             ),

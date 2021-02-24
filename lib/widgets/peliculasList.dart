@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/pelicula.dart';
 import '../providers/peliculas.dart';
 import '../widgets/pelicula_item.dart';
 
@@ -20,9 +19,6 @@ class PeliculaList extends StatelessWidget {
         peliculasCargadas[i].type,
         peliculasCargadas[i].year,
         peliculasCargadas[i].poster,
-        peliculasCargadas[i].plot,
-        peliculasCargadas[i].imdbRating,
-        peliculasCargadas[i].metaScore,
       ),
     );
   }
